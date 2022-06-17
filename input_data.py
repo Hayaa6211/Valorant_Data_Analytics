@@ -47,7 +47,7 @@ def main():
     df = read.read_df("Battle_Report.csv")
     cols = read.read_json("cols.json")
     add_df = Write.add_db(cols)
-    df.append(add_df)
+    pd.concat([df,add_df])
     Write.write_to_csv(df,"Battle_Report.csv")
 
 
